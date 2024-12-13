@@ -3,6 +3,10 @@ cr0ybot/taxonomy-to-wc-attribute
 
 Convert taxonomy terms to WooCommerce attributes.
 
+Currently this package only supports fixing an attribute that has already had terms transfered to it. When you transfer terms from a standard taxonomy to an attribute, those attributes are not automatically added to the product. This package will add the attribute to the product based on the terms that were transfered.
+
+You can use the [Taxonomy Switcher plugin](https://wordpress.org/plugins/taxonomy-switcher/) to handle the initial transfer of terms.
+
 [![Build Status](https://travis-ci.org/cr0ybot/taxonomy-to-wc-attribute.svg?branch=master)](https://travis-ci.org/cr0ybot/taxonomy-to-wc-attribute)
 
 Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contributing) | [Support](#support)
@@ -10,8 +14,12 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 ## Using
 
 ~~~
-wp hello-world
+wp fix-taxonomy-attributes <attribute>
 ~~~
+
+Note that `<attribute>` is the attribute slug without the `pa_` prefix.
+
+This command will add the attribute to all products that have terms assigned to it.
 
 ## Installing
 
